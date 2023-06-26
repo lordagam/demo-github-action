@@ -15,7 +15,7 @@ jobs:
     steps:
         - name: trigger another workflow
           run: |
-              curl -X POST https://api.github.com/repos/${{ github.repository }}/actions/workflows/issue.yml/dispatches \
+              curl -X POST https://api.github.com/repos/${{ github.repository }}/actions/workflows/issue.yml \
               -H 'Accept: application/vnd.github.v3+json' \
               --header 'Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}' \
               --data '{"ref": "${{ github.ref }}"}'
